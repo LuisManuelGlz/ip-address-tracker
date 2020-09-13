@@ -36,12 +36,13 @@
 
         <div class="ip-address-group">
           <input
+            id="ip-address-input"
             type="text"
             class="input"
             name="ipAddress"
             placeholder="Search for any IP address or domain"
           />
-          <button type="submit" class="button">
+          <button type="submit" id="send-button" class="button">
             <img src="images/icon-arrow.svg" alt="arrow" />
           </button>
         </div>
@@ -49,21 +50,21 @@
         <div class="card">
           <div class="list-item">
             <div class="location-title text-gray text-uppercase">IP Address</div>
-            <div class="location-info">192.212.174.101</div>
+            <div id="ip-address" class="location-info"></div>
           </div>
     
           <hr class="item-spacer" />
     
           <div class="list-item">
             <div class="location-title text-gray text-uppercase">Location</div>
-            <div class="location-info">Brooklyn, NY 10001</div>
+            <div id="location" class="location-info"></div>
           </div>
     
           <hr class="item-spacer" />
     
           <div class="list-item">
             <div class="location-title text-gray text-uppercase">Timezone</div>
-            <div class="location-info">UTC -05:00</div>
+            <div id="timezone" class="location-info"></div>
           </div>
     
           <hr class="item-spacer" />
@@ -72,7 +73,7 @@
             <div class="location-title text-gray text-uppercase">
               ISP
             </div>
-            <div class="location-info">SpaceX Starlink</div>
+            <div id="isp" class="location-info"></div>
           </div>
         </div>
       </div>
@@ -86,22 +87,6 @@
       Coded by <a href="https://www.github.com/LuisManuelGlz" target="_blank">Luis Manuel González</a>.
     </div>
 
-    <script>
-      var map = L.map('map').setView([51.505, -0.09], 13);
-
-      var locationIcon = L.icon({
-        iconUrl: 'images/icon-location.svg',
-
-        iconSize: [40, 50], // size of the icon
-        iconAnchor: [20, 50], // point of the icon which will correspond to marker's location
-      });
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
-
-      L.marker([51.5, -0.09], { icon: locationIcon }).addTo(map);
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
