@@ -32,9 +32,9 @@
   <body>
     <div class="header">
       <div class="container">
-        <h1 class="text-white">IP Address Tracker</h1>
+        <h1 class="text-center text-white">IP Address Tracker</h1>
 
-        <div class="row ip-address-group">
+        <div class="ip-address-group">
           <input
             type="text"
             class="input"
@@ -45,12 +45,39 @@
             <img src="images/icon-arrow.svg" alt="arrow" />
           </button>
         </div>
+
+        <div class="card">
+          <div class="list-item">
+            <div class="location-title text-gray text-uppercase">IP Address</div>
+            <div class="location-info">192.212.174.101</div>
+          </div>
+    
+          <hr class="item-spacer" />
+    
+          <div class="list-item">
+            <div class="location-title text-gray text-uppercase">Location</div>
+            <div class="location-info">Brooklyn, NY 10001</div>
+          </div>
+    
+          <hr class="item-spacer" />
+    
+          <div class="list-item">
+            <div class="location-title text-gray text-uppercase">Timezone</div>
+            <div class="location-info">UTC -05:00</div>
+          </div>
+    
+          <hr class="item-spacer" />
+    
+          <div class="list-item">
+            <div class="location-title text-gray text-uppercase">
+              ISP
+            </div>
+            <div class="location-info">SpaceX Starlink</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    IP Address Location Timezone UTC
-    <!-- add offset value dynamically using the API -->
-    ISP
 
     <div id="map" class="full"></div>
 

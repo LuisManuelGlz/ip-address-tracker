@@ -1,31 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
-/* If the screen size is 600px wide or less, set the font-size to 30px */
-@media screen and (min-width: 601px) {
-  h1 {
-    font-size: 30px;
-  }
-  .header {
-    height: 270px;
-  }
-  .full {
-    height: calc(100% - 305px);
-  }
-}
-
-/* If the screen size is 600px wide or less, set the font-size to 25px */
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 25px;
-  }
-  .header {
-    height: 300px;
-  }
-  .full {
-    height: calc(100% - 335px);
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -38,29 +12,46 @@ body {
 }
 
 h1 {
+  font-size: 30px;
   font-weight: 500;
   word-spacing: -1px;
 }
 
+.item-spacer {
+  margin-top: 10px;
+  height: 70px;
+  border-width: 0 1px 0 0;
+  color: hsl(0, 0%, 85%);
+}
+
 .text-white {
-  color: #ffffff;
+  color: hsl(0, 0%, 100%);
+}
+
+.text-gray {
+  color: hsl(0, 0%, 59%);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .header {
+  height: 270px;
   background: url('images/pattern-bg.png') center no-repeat;
   background-size: cover;
-  text-align: center;
 }
 
 .container {
   padding: 30px;
 }
 
-.row {
-  display: flex;
-}
-
 .ip-address-group {
+  display: flex;
   justify-content: center;
   margin-top: 25px;
 }
@@ -68,7 +59,7 @@ h1 {
 .input {
   border: none;
   width: 430px;
-  padding: 20px;
+  padding: 20px 20px 20px 25px;
   height: 15px;
   border-radius: 15px 0 0 15px;
   font-size: 17px;
@@ -78,7 +69,7 @@ h1 {
 .button {
   border: none;
   min-width: 55px;
-  background: #000000;
+  background: hsl(0, 0%, 0%);
   border-radius: 0 15px 15px 0;
 }
 
@@ -87,10 +78,104 @@ h1 {
   cursor: pointer;
 }
 
+.card {
+  background: hsl(0, 0%, 100%);
+  display: flex;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 192px;
+  left: 0;
+  right: 0;
+  width: 77%;
+  height: 94px;
+  padding: 35px 0 25px 0;
+  border-radius: 15px;
+  z-index: 100;
+}
+
+.list-item {
+  width: 200px;
+  padding: 0 45px 0 30px;
+}
+
+.location-title {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.location-info {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 25px;
+  word-wrap: break-word;
+}
+
+#map {
+  z-index: 0;
+}
+
+.full {
+  height: calc(100% - 270px);
+}
+
+.leaflet-control-zoom, .leaflet-control-attribution {
+  display: none;
+}
+
 .attribution {
+  background: hsla(0, 0%, 100%, 0.7);
+  padding: 1.5px;
+  position: fixed;
+  bottom: 0;
   font-size: 11px;
-  text-align: center;
+  z-index: 100;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* Media queries */
+@media screen and (max-width: 1100px) {
+  .list-item {
+    width: 150px;
+    padding: 0 20px 0 20px;
+  }
+  .location-title {
+    font-size: 10px;
+  }
+  .location-info {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  h1 {
+    font-size: 25px;
+  }
+  .header {
+    height: 300px;
+  }
+  .item-spacer {
+    display: none;
+  }
+  .card {
+    top: 170px;
+    width: 88%;
+    height: 250px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 20px 0;
+  }
+  .list-item {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  .full {
+    height: 100%;
+  }
 }
